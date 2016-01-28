@@ -34,7 +34,6 @@ using System.Collections;
 using System.Globalization;
 using System.Collections.Generic;
 
-
 namespace SharpJson
 {
 	class Lexer
@@ -337,12 +336,8 @@ namespace SharpJson
 		}
 
 		public bool parseNumbersAsFloat {
-			get {
-				return lexer.parseNumbersAsFloat;
-			}
-			set {
-				lexer.parseNumbersAsFloat = value;
-			}
+			get;
+			set;
 		}
 
 		Lexer lexer;
@@ -355,7 +350,9 @@ namespace SharpJson
 		public object Decode(string text)
 		{
 			errorMessage = null;
+
 			lexer = new Lexer(text);
+			lexer.parseNumbersAsFloat = parseNumbersAsFloat;
 
 			return ParseValue();
 		}
