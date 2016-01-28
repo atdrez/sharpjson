@@ -79,7 +79,7 @@ namespace SharpJson
 			Reset();
 
 			json = text.ToCharArray();
-			parseNumbersAsFloat = true;
+			parseNumbersAsFloat = false;
 		}
 
 		public void Reset()
@@ -344,7 +344,8 @@ namespace SharpJson
 
 		public JsonDecoder()
 		{
-
+			errorMessage = null;
+			parseNumbersAsFloat = false;
 		}
 
 		public object Decode(string text)
