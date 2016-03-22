@@ -410,7 +410,6 @@ namespace SharpJson
 				}
 			}
 			
-			return null;
 		}
 
 		IList<object> ParseArray()
@@ -444,7 +443,6 @@ namespace SharpJson
 				}
 			}
 			
-			return null;
 		}
 
 		object ParseValue()
