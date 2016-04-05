@@ -173,11 +173,15 @@ namespace SharpJson
 				success = false;
 				return null;
 			}
-			
-			if (builder != null)
-				return builder.ToString ();
-			else
+
+			if (builder == null) {
 				return new string (stringBuffer, 0, idx);
+			} else {
+				if (idx > 0)
+					builder.Append(stringBuffer, 0, idx);
+
+				return builder.ToString ();
+			}
 		}
 		
 		string GetNumberString()
